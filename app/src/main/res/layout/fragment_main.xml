@@ -52,6 +52,27 @@
 
         </LinearLayout>
         <!--Passward-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@mipmap/ic_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Password-->
+            <EditText
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:inputType="textPassword"
+                android:hint="PW :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
         <!--Botton-->
         <!--New register-->
     </LinearLayout>
