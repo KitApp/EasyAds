@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import app.kit.inv.easyads.MainActivity;
 import app.kit.inv.easyads.R;
+import app.kit.inv.easyads.utility.MyAlert;
 
 /**
  * Created by user on 10/10/2560.
@@ -19,8 +20,8 @@ import app.kit.inv.easyads.R;
 
 public class RegisterFragment extends Fragment {
 
-      // Explicit
-    private String nameString,uscrString, passwordString;
+    // Explicit
+    private String nameString, uscrString, passwordString;
 
 
     @Nullable
@@ -68,9 +69,21 @@ public class RegisterFragment extends Fragment {
                 EditText nameEditText = (EditText) getView().findViewById(R.id.edtName);
                 EditText userEditText = (EditText) getView().findViewById(R.id.edtUser);
                 EditText passwordEditText = (EditText) getView().findViewById(R.id.edtPassword);
+//                  Change Data type
+//
+                nameString = nameEditText.getText().toString().trim();
+                uscrString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
 
+//                 Check space
+                if (nameString.equals("") || uscrString.equals("") || passwordString.equals("")) {
 
-            }  // onClick
+                    MyAlert myAlert = new MyAlert(getActivity());
+                    myAlert.myDialog("Have Space","Please Fill All Every Blank");
+
+                }
+
+                }  // onClick
         });
 
 
