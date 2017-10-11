@@ -3,10 +3,12 @@ package app.kit.inv.easyads.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import app.kit.inv.easyads.MainActivity;
 import app.kit.inv.easyads.R;
 
 /**
@@ -20,5 +22,36 @@ public class RegisterFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_register,container,false);
 
         return view;
+    } // coCreateView
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+     super.onActivityCreated(savedInstanceState);
+
+//        Toolbar Contoller
+        toolbarContoller();
+
     }
-}
+
+    private void toolbarContoller() {
+        // Config Toolbar
+        Toolbar toolbar = (Toolbar) getView().findViewById(R.id.toolbarRegister);
+        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+
+        // Setup Title
+
+        ((MainActivity)getActivity()).setTitle(getResources().getString(R.string.new_register));
+
+        // Back Controller
+        ((MainActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
+    }
+
+} // Main Class

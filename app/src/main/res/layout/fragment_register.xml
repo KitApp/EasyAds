@@ -16,7 +16,7 @@
     <!--Content-->
     <!--Human-->
     <ImageView
-        android:src="@drawable/Human"
+        android:src="@drawable/human"
         android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="@dimen/logo"
